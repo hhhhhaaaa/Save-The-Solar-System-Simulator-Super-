@@ -2,17 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameController : MonoBehaviour
+public class TP_Controller : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public static CharacterController CharacterController;
+    public static TP_Controller Instance;
+
     void Start()
     {
-        Debug.Log("Debugging");
+        CharacterController = GetComponent("CharacterController") as CharacterController;
+        Instance = this;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Camera.mainCamera == null)
+            return;
+        GetLocomotionInput()
+    }
+
+    void GetLocomotionInput()
+    {
+
     }
 }
