@@ -41,7 +41,7 @@ public class TP_Motor : MonoBehaviour
     {
         if (MoveVector.x != 0 || MoveVector.z != 0)
         {
-            transform.rotation = Quaternion.Euler(transform.eulerAngles.x, Camera.mainCamera.transform.eulerAngles.y, transform.eulerAngles.z)
+            transform.rotation = Quaternion.Euler(transform.eulerAngles.x, Camera.main.transform.eulerAngles.y, transform.eulerAngles.z);
         }
     }
 }

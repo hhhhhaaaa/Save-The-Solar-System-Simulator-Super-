@@ -15,8 +15,9 @@ public class TP_Controller : MonoBehaviour
 
     void Update()
     {
-        if (Camera.mainCamera == null)
+        if (Camera.main == null)
             return;
+
         GetLocomotionInput();
 
         TP_Motor.Instance.UpdateMotor();
@@ -35,7 +36,7 @@ public class TP_Controller : MonoBehaviour
 
         if (Input.GetAxis("Horizontal") > deadZone || Input.GetAxis("Horizontal") < -deadZone)
         {
-            TP_Motor.Instance.MoveVector += new Vector3(0, 0, Input.GetAxis("Horizontal"), 0, 0);
+            TP_Motor.Instance.MoveVector += new Vector3(Input.GetAxis("Horizontal"), 0, 0);
         }
     }
 }
