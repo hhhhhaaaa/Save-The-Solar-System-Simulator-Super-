@@ -11,6 +11,7 @@ public class TP_Controller : MonoBehaviour
     {
         CharacterController = GetComponent("CharacterController") as CharacterController;
         Instance = this;
+        TP_Camera.UseExistingOrCreateNewMainCamera();
     }
 
     void Update()
